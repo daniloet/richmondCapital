@@ -7,178 +7,238 @@
     <title>Richmond Capital</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-dTRn4DeN10f6qy9wCofnhwSlBh0sO6vP86k7IlK+yj4z3zj+Z7rF1nFK65IEMW5Z"
-        crossorigin="anonymous"></script>
+
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="./js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
 </head>
 
-<body class="container">
-    <header>
-        <div class="logos">
-            <a href="./index.html">
-                <img src="./assets/imagotipo.png" alt="Imagotipo richmond capital" width="150px" >
-            </a>
-            <a href="https://www.inviu.com.ar/" target="_blank">
-                <img src="./assets/605cd3b568ff6_700_491.png" alt="Logo Inviu" width="150px">
+<body>
+    <div class="container">
+        <header>
 
-            </a>
-        </div>
+            <div class="logos">
+                <a href="./index.html">
+                    <img src="./assets/imagotipo.png" alt="Imagotipo richmond capital" width="150px">
+                </a>
+                <a href="https://www.inviu.com.ar/" target="_blank">
+                    <img src="./assets/605cd3b568ff6_700_491.png" alt="Logo Inviu" width="150px">
 
-        <ul class="navli">
-            <li>
-                <a class="sin-color" href="./index.html">
-                    Home
                 </a>
-            </li>
-            <li>
-                <a class="sin-color" href="#productos">
-                    Productos
-                </a>
-            </li>
-            <li>
-                <a class="sin-color" href="#research">
-                    Research
-                </a>
-            </li>
-        </ul>
-
-    </header>
-    <main>
-        <section class="section1">
-            <div>
-                <button>
-                    <a href="https://inversor.inviu.com.ar/login" target="_blank">Operá</a>
-                </button>
-                <button>
-                    <a href="./pages/abrir_cuenta.html">Abrir Cuenta</a>
-                </button>
             </div>
-            <div>
-                <img src="./assets/celularGrande.jpg" alt="Imagen de celular con App de Richmond Capital" width="250">
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img src="./assets/pngegg.png" alt="Boton menu desplegable"
+                        width="20px"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#productos" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Productos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#acciones">Acciones</a>
+                            <a class="dropdown-item" href="#bonos">Bonos</a>
+                            <a class="dropdown-item" href="#cedears">CEDEARS</a>
+                            <a class="dropdown-item" href="#fondos">Fondos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#research">Research</a>
+                    </li>
+                </ul>
             </div>
-            <div>
+        </header>
+        <main>
+            <section class="section1">
                 <div>
+                    <button class="button-opera">
+                        <a href="https://inversor.inviu.com.ar/login" target="_blank">Operá</a>
+                    </button>
+                    <button class="button-abrir">
+                        <a href="./pages/abrir_cuenta.html">Abrir Cuenta</a>
+                    </button>
+                </div>
+                <div>
+                    <img class="radius" src="./assets/celularGrande.jpg"
+                        alt="Imagen de celular con App de Richmond Capital" width="250">
+                </div>
+
+                <div class="no-margin">
                     <p>Invertí.
                         De manera simple.
                         Y segura.</p>
                 </div>
-            </div>
-        </section>
-        <section class="section2">
-            <div>
-                <h1>Productos</h1>
-            </div>
 
-            <div class="card" style="width: 18rem;">
-                <div class="card-inner">
-                    <div class="front">
-                        <img src="./assets/icono_acciones.png" class="card-img-top" alt="Icono Acciones">
+            </section>
+            <section class="section2">
+                <div>
+                    <h1>Productos</h1>
+                </div>
 
-                        <div class="card-body">
-                            <h5 class="card-title">Acciones</h5>
+                <div class="card" style="width: 18rem;">
+                    <div id="acciones" class="card-inner">
+                        <div class="front">
+                            <img src="./assets/icono_acciones.png" class="card-img-top" alt="Icono Acciones">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Acciones</h5>
+                            </div>
+
                         </div>
 
-                    </div>
-
-                    <div class="back">
-                        <div class="card-body">
-                            <h5 class="card-title">Acciones</h5>
-                            <p>
-                                sakjhaslsdhaljshdk
-                            </p>
+                        <div class="back">
+                            <div class="card-body">
+                                <h5 class="card-title">Acciones</h5>
+                                <div id="output"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-inner">
-                    <div class="front">
-                        <img src="./assets/icono_bonos.png" class="card-img-top" alt="Icono Bonos">
+                <div class="card" style="width: 18rem;">
+                    <div id="bonos" class="card-inner">
+                        <div class="front">
+                            <img src="./assets/icono_bonos.png" class="card-img-top" alt="Icono Bonos">
 
-                        <div class="card-body">
-                            <h5 class="card-title">Bonos</h5>
-                        </div>
-                    </div>
-
-                    <div class="back">
-                        <div class="card-body">
-                            <h5 class="card-title">Bonos</h5>
-                            <p>
-                                sakjhaslsdhaljshdk
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-inner">
-                    <div class="front">
-                        <img src="./assets/icono_cedears.png" class="card-img-top" alt="Icono CEDEARS">
-
-                        <div class="card-body">
-                            <h5 class="card-title">CEDEARS</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">Bonos</h5>
+                            </div>
                         </div>
 
-                    </div>
-
-                    <div class="back">
-                        <div class="card-body">
-                            <h5 class="card-title">CEDEARS</h5>
-                            <p>
-                                sakjhaslsdhaljshdk
-                            </p>
+                        <div class="back">
+                            <div class="card-body">
+                                <h5 class="card-title">Bonos</h5>
+                                <p>
+                                    sakjhaslsdhaljshdk
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-inner">
-                    <div class="front">
-                        <img src="./assets/icono_fondos.png" class="card-img-top" alt="Icono CEDEARS">
+                <div class="card" style="width: 18rem;">
+                    <div id="cedears" class="card-inner">
+                        <div class="front">
+                            <img src="./assets/icono_cedears.png" class="card-img-top" alt="Icono CEDEARS">
 
-                        <div class="card-body">
-                            <h5 class="card-title">Fondos</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">CEDEARS</h5>
+                            </div>
+
                         </div>
 
-                    </div>
-
-                    <div class="back">
-                        <div class="card-body">
-                            <h5 class="card-title">Fondos</h5>
-                            <p>
-                                sakjhaslsdhaljshdk
-                            </p>
+                        <div class="back">
+                            <div class="card-body">
+                                <h5 class="card-title">CEDEARS</h5>
+                                <p>
+                                    sakjhaslsdhaljshdk
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="card" style="width: 18rem;">
+                    <div id="fondos" class="card-inner">
+                        <div class="front">
+                            <img src="./assets/icono_fondos.png" class="card-img-top" alt="Icono CEDEARS">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Fondos</h5>
+                            </div>
+
+                        </div>
+
+                        <div class="back">
+                            <div class="card-body">
+                                <h5 class="card-title">Fondos</h5>
+                                <p>
+                                    sakjhaslsdhaljshdk
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </section>
+        </main>
+        <footer>
+            <div class="footer-div">
+                <p>Av. Corrientes 415 - CABA</p>
+                <p>Buenos Aires - Argentina</p>
             </div>
+            <div class="footer-div">
+                <p>info@richmondcapital.com.ar</p>
+                <p><a href="https://www.rabello.com/Aranceles%20y%20comisiones%20ARG.pdf" target="_blank">Comisiones y
+                        Aranceles</a></p>
+            </div>
+        </footer>
+
+        <script>
+            // URL de ejemplo con placeholders, reemplázalos con tu información real
+            const spreadsheetUrl = "https://sheets.googleapis.com/v4/spreadsheets/1j4kRHvXxY55_XuP-loFPKCicl6zcsIrwh9mJZlw2UaI/values/Sheet1!A1:B10?key=AIzaSyCfvKYbsT7apFZNU5MeQ50BPs9wLNXmWzc";
 
 
+            // Llamar a la función para cargar y mostrar datos
+            fetchDataAndDisplay();
+
+            // ...
+
+            function fetchDataAndDisplay() {
+                // Realizar una solicitud para obtener datos de la hoja de cálculo
+                fetch(spreadsheetUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Network response was not ok: ${response.statusText}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Datos obtenidos correctamente:', data);
+                        displayData(data);
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar datos:', error);
+                    });
+            }
 
 
-        </section>
-    </main>
-    <footer>
-        <div class="footer-div">
-            <p>Av. Corrientes 415 - CABA</p>
-            <p>Buenos Aires - Argentina</p>
-        </div>
-        <div class="footer-div">
-            <p>info@richmondcapital.com.ar</p>
-            <p><a href="https://www.rabello.com/Aranceles%20y%20comisiones%20ARG.pdf" target="_blank">Comisiones y
-                    Aranceles</a></p>
-        </div>
-    </footer>
-    <script src="./js/bootstrap.bundle.js"></script>
-    <script src="./js/script.js"></script>
+            function displayData(data) {
+                var output = document.getElementById('output');
 
+                // Crear una tabla HTML
+                var table = document.createElement('table');
+                table.border = '1';
+
+                // Iterar sobre los datos y agregar filas y celdas a la tabla
+                for (var i = 0; i < data.values.length; i++) {
+                    var row = table.insertRow(i);
+
+                    for (var j = 0; j < data.values[i].length; j++) {
+                        var cell = row.insertCell(j);
+                        cell.innerHTML = data.values[i][j];
+                    }
+                }
+
+                // Limpiar el contenido anterior y agregar la nueva tabla al elemento de salida
+                output.innerHTML = '';
+                output.appendChild(table);
+            }
+
+        </script>
+    </div>
 </body>
 
 </html>
