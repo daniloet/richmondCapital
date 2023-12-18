@@ -1,8 +1,8 @@
-@charset "UTF-8";
 .container {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   padding: 0px;
+  width: 100%;
   margin: 0;
   height: 100%;
   display: grid;
@@ -23,6 +23,7 @@
   grid-area: header;
   flex-direction: column;
   background-color: #E5E5E3;
+  z-index: 2;
 }
 .container header .navbar-toggler-icon {
   margin-bottom: 2px;
@@ -40,7 +41,14 @@
   justify-content: center;
   align-items: center;
 }
-.container header .navli {
+.container header .logos a .off-screen {
+  transform: translateX(-100vw);
+}
+.container header .logos a .animate {
+  transform: translateX(0);
+  transition: transform 1s ease;
+}
+.container header .logos .navli {
   padding-top: 10px;
   display: flex;
   list-style: none;
@@ -52,16 +60,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
 }
-.container main #whatsapp-link {
-  position: fixed;
-  bottom: 20px; /* Ajusta la posición según tus necesidades */
-  right: 20px; /* Ajusta la posición según tus necesidades */
-  padding: 10px;
-  background-color: green; /* Cambia el color de fondo según tus preferencias */
-  color: white; /* Cambia el color del texto según tus preferencias */
-  text-decoration: none;
-  border-radius: 5px;
+.container main .radius,
+.container main .no-margin {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.container main .radius.animate,
+.container main .no-margin.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 .container main .section1 {
   padding-top: 10px;
@@ -103,6 +113,22 @@
 .container main .section1 .button-abrir a {
   text-decoration: none;
   color: #223064;
+}
+.container main .section1 .button-opera,
+.container main .section1 .button-abrir {
+  opacity: 0;
+  /* Hacer los botones inicialmente transparentes */
+  transform: translateY(-50px);
+  /* Mover los botones hacia arriba */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.container main .section1 .button-opera.animate,
+.container main .section1 .button-abrir.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.container main .section2 {
+  padding-top: 10px;
 }
 .container main .section2 h1 {
   color: #223064;
