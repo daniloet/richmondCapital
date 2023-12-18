@@ -154,9 +154,7 @@ $cardHeight: 300px;
             .button-opera,
             .button-abrir {
                 opacity: 0;
-                /* Hacer los botones inicialmente transparentes */
                 transform: translateY(-50px);
-                /* Mover los botones hacia arriba */
                 transition: opacity 0.8s ease, transform 0.8s ease;
             }
 
@@ -177,6 +175,13 @@ $cardHeight: 300px;
 
             h1 {
                 color: #223064;
+            
+                transform: translateX(-50px);
+                transition: opacity 0.8s ease, transform 0.8s ease;
+            }
+            h1.animate{
+                
+                transform: translateX(50px);
             }
 
             .card {
