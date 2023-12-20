@@ -34,10 +34,11 @@ $cardHeight: 300px;
         background-color: #E5E5E3;
         z-index: 2;
 
-        .navbar-toggler-icon {
-            margin-bottom: 2px;
+        .navbar-toggler {
+            z-index: 2;
 
         }
+
 
         .nav-item {
             color: #223064;
@@ -57,6 +58,7 @@ $cardHeight: 300px;
             a {
                 .off-screen {
                     transform: translateX(-100vw);
+                    width: 150px;
 
                 }
 
@@ -84,6 +86,7 @@ $cardHeight: 300px;
         flex-direction: column;
         align-items: center;
         z-index: 1;
+        background-color: #E5E5E3;
 
         .radius,
         .no-margin {
@@ -173,15 +176,22 @@ $cardHeight: 300px;
         .section2 {
             padding-top: 10px;
 
-            h1 {
-                color: #223064;
-            
-                transform: translateX(-50px);
-                transition: opacity 0.8s ease, transform 0.8s ease;
-            }
-            h1.animate{
-                
-                transform: translateX(50px);
+            .contenedor {
+
+
+                .oculto {
+                    color: #223064;
+                    opacity: 0;
+                    transition: opacity 0.5s ease-in-out;
+
+                }
+
+                .visible {
+                    opacity: 1;
+                }
+
+
+
             }
 
             .card {
@@ -191,7 +201,7 @@ $cardHeight: 300px;
                 transition: transform 0.5s;
                 border: none;
 
-                // Contenedor que envuelve ambas caras
+
                 .card-inner {
                     display: flex;
                     justify-content: center;
@@ -288,4 +298,57 @@ $cardHeight: 300px;
         }
     }
 
+}
+
+@media only screen and (min-width: 100px) {
+
+    .container {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        padding: 0px;
+        width: 100%;
+        margin: 0;
+        height: 100%;
+        display: grid;
+        grid-template-areas:
+            "header"
+            "main"
+            "main"
+            "footer";
+        grid-template-rows: 1fr 2fr 2fr 1fr;
+        grid-template-columns: 1fr;
+        min-height: 100vh;
+        justify-content: center;
+        justify-items: center;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        grid-area: header;
+        flex-direction: column;
+        background-color: #E5E5E3;
+        z-index: 2;
+
+        header {
+            .logos {
+                display: flex;
+
+                a {
+                    .off-screen {
+                        width: 70px;
+                    }
+
+                }
+
+
+
+                .img1 {
+                    width: 2px;
+                }
+
+            }
+        }
+    }
 }

@@ -30,31 +30,23 @@
                     <img class="off-screen" src="./assets/imagotipo.png" alt="Imagotipo richmond capital" width="150px">
                 </a>
                 <a href="https://www.inviu.com.ar/" target="_blank">
-                    <img class="off-screen" src="./assets/605cd3b568ff6_700_491.png" alt="Logo Inviu" width="150px">
+                    <img class="off-screen" src="./assets/605cd3b568ff6_700_491.png" alt="Logo Inviu" >
 
                 </a>
             </div>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><img src="./assets/pngegg.png" alt="Boton menu desplegable"
-                        width="20px"></span>
+                <span class="navbar-toggler-icon">
+                    <img class="img1" src="./assets/pngegg.png" alt="Boton menu desplegable"
+                    style="width: inherit;" ></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="./index.html">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#productos" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Productos
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#acciones">Acciones</a>
-                            <a class="dropdown-item" href="#bonos">Bonos</a>
-                            <a class="dropdown-item" href="#cedears">CEDEARS</a>
-                            <a class="dropdown-item" href="#fondos">Fondos</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#research">Research</a>
@@ -84,9 +76,9 @@
                 </div>
 
             </section>
-            <section class="section2">
-                <div>
-                    <h1>Productos</h1>
+            <section class="section2" id="productos">
+                <div class="contenedor">
+                    <h1 class="oculto">Productos</h1>
                 </div>
 
                 <div class="card" style="width: 18rem;">
@@ -275,6 +267,24 @@
                     }, index * 300); // Ajusta el retraso según tus preferencias
                 });
             });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const h1 = document.querySelector('.oculto');
+
+                window.addEventListener('scroll', function () {
+                    const distanciaDesdeLaParteSuperior = h1.getBoundingClientRect().top;
+
+                    const umbral = window.innerHeight / 2;
+
+                    if (distanciaDesdeLaParteSuperior < umbral) {
+                        h1.classList.add('visible');
+                    } else {
+                        h1.classList.remove('visible');
+                    }
+                });
+            });
+
         </script>
     </div>
 </body>

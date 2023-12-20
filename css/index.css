@@ -25,8 +25,8 @@
   background-color: #E5E5E3;
   z-index: 2;
 }
-.container header .navbar-toggler-icon {
-  margin-bottom: 2px;
+.container header .navbar-toggler {
+  z-index: 2;
 }
 .container header .nav-item {
   color: #223064;
@@ -43,6 +43,7 @@
 }
 .container header .logos a .off-screen {
   transform: translateX(-100vw);
+  width: 150px;
 }
 .container header .logos a .animate {
   transform: translateX(0);
@@ -61,6 +62,7 @@
   flex-direction: column;
   align-items: center;
   z-index: 1;
+  background-color: #E5E5E3;
 }
 .container main .radius,
 .container main .no-margin {
@@ -128,13 +130,13 @@
 .container main .section2 {
   padding-top: 10px;
 }
-.container main .section2 h1 {
+.container main .section2 .contenedor .oculto {
   color: #223064;
-  transform: translateX(-50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
-.container main .section2 h1.animate {
-  transform: translateX(50px);
+.container main .section2 .contenedor .visible {
+  opacity: 1;
 }
 .container main .section2 .card {
   width: 200px;
@@ -215,4 +217,41 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+@media only screen and (min-width: 100px) {
+  .container {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    padding: 0px;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "header" "main" "main" "footer";
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    justify-content: center;
+    justify-items: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    grid-area: header;
+    flex-direction: column;
+    background-color: #E5E5E3;
+    z-index: 2;
+  }
+  .container header .logos {
+    display: flex;
+  }
+  .container header .logos a .off-screen {
+    width: 70px;
+  }
+  .container header .logos .img1 {
+    width: 2px;
+  }
 }/*# sourceMappingURL=index.css.map */
